@@ -1,0 +1,45 @@
+<div class="top-panel">
+  <div class="top-panel-search">
+    <label for="message-text" class="col-form-label top-panel-search__label">Поиск:</label>
+    <div class="input-group">
+      <input type="text" class="form-control top-panel-search__input" [(ngModel)]="this.searchText">
+      <button class="btn btn-outline-secondary bi bi-search" (click)="search()" type="button"></button>
+    </div>
+  </div>
+  <input class="btn btn-primary top-panel__add-button" type="button" value="Добавить" (click)="triggerModal(modalData)">
+</div>
+
+
+<ng-template #modalData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Добавить сообщение</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Close')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="recipient-name" class="col-form-label">Ник:</label>
+      <input type="text" class="form-control" id="recipient-name" [(ngModel)]="this.nickname">
+    </div>
+    <div class="mb-3">
+      <label for="message-text" class="col-form-label">Сообщение:</label>
+      <textarea class="form-control" id="message-text" [(ngModel)]="this.message"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="message-text" class="col-form-label">Дата и время:</label>
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="this.date" ngbDatepicker
+          #d="ngbDatepicker" />
+        <button class="btn btn-outline-secondary bi bi-calendar-date" (click)="d.toggle()" type="button"></button>
+      </div>
+      <div class="input-group">
+        <ngb-timepicker [(ngModel)]="this.time" [seconds]="true"></ngb-timepicker>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save')">Добавить</button>
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Cancel')">Отмена</button>
+  </div>
+</ng-template>

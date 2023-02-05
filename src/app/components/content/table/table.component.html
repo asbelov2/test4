@@ -1,0 +1,21 @@
+<div class="table">
+  <div class="table-content">
+    <div class="table-headers">
+      <ng-container *ngFor="let column of tableConfig.columns">
+        <div *ngIf="!column.hidden" [class]="'table-header__'+column.alias" (click)="onHeaderClick(column.alias)">
+          {{column.name}}
+          <i *ngIf="column.isSorted && (column.sortOrder === 1)" class="bi bi-arrow-down"></i>
+          <i *ngIf="column.isSorted && (column.sortOrder === -1)" class="bi bi-arrow-up"></i>
+        </div>
+      </ng-container>
+    </div>
+    <div class="table-message-list">
+      <div #cellContainer class="table-cell"></div>
+      <ng-container *ngFor="let item of messages | paginate: { itemsPerPage: 9, currentPage: page }"></ng-container>
+    </div>
+  </div>
+  <div class="table-pagination">
+    <pagination-controls previousLabel="Назад" nextLabel="Вперед" (pageChange)="pChange($event)"
+      [maxSize]="9"></pagination-controls>
+  </div>
+</div>

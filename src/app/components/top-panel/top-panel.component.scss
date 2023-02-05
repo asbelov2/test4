@@ -1,0 +1,27 @@
+.top-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+  font-family: "Roboto";
+}
+
+.top-panel__add-button {
+  width: 300px;
+  height: 40px;
+}
+
+.top-panel-search {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 20px;
+}
+
+.top-panel-search__input {
+  width: 600px;
+  margin-left: 50px;
+}
+
+.top-panel-search__label {
+  font-weight: bold;
+}

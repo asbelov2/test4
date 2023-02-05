@@ -1,0 +1,66 @@
+.cell {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  padding: 0px 0px 0px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+  background-color: lightgray;
+}
+
+.cell_active {
+  background-color: #0d6efd !important;
+}
+
+.cell__id {
+  display: flex;
+  justify-content: flex-start;
+  min-width: 60px;
+  height: 100%;
+  padding: 0;
+}
+
+.cell__username {
+  display: flex;
+  justify-content: flex-start;
+  min-width: 160px;
+  padding: 0;
+}
+
+.cell__message {
+  width: 100%;
+  display: flex;
+  padding: 0;
+}
+
+.cell__datetime {
+  display: flex;
+  text-align: center;
+  min-width: 88px;
+  padding: 0;
+}
+
+.cell__delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 32px;
+  width: 32px;
+  border: 0;
+  margin: 5px;
+}
+
+.cell__delete-button:hover {
+  color: black;
+}
+
+.cell__delete-button_red {
+  color: #cc3545;
+}

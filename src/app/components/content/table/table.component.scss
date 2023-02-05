@@ -1,0 +1,82 @@
+.table {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid gray;
+  padding: 20px 20px 0px 20px;
+  margin: 0;
+  border-radius: 5px;
+  font-family: "Roboto";
+  background-color: #e9ecef;
+}
+
+.table-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.table-message-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.table-pagination {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid lightgray;
+  padding: 0;
+}
+
+.table-headers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  background-color: lightgray;
+  min-height: 48px;
+}
+
+.table-header__id {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  cursor: pointer;
+}
+
+.table-header__username {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 160px;
+  border-right: 1px solid black;
+  cursor: pointer;
+}
+
+.table-header__message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-right: 1px solid black;
+  cursor: pointer;
+}
+
+.table-header__datetime {
+  display: flex;
+  border-right: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 120px;
+  cursor: pointer;
+}

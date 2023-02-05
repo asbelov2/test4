@@ -1,0 +1,50 @@
+.app-wrap {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+.app {
+  box-sizing: border-box;
+  width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.app-table-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-table {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.app-side-panel {
+  display: flex;
+  margin: 20px;
+}
+
+.app-top-panel {
+  margin: 0px 20px;
+}

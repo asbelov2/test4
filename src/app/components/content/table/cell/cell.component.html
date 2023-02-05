@@ -1,0 +1,30 @@
+<div class="cell" [ngClass]="{cell_active: isActive}" (click)="onCellClick()" (mouseenter)="onCellHover()"
+  (mouseleave)="onCellLeave()">
+  <ng-container *ngFor="let column of tableConfig?.columns">
+    <div *ngIf="!column.hidden" [class]="'cell__'+column.alias">{{getProperty(this.data,column.alias)}}</div>
+  </ng-container>
+  <button *ngIf="!isDeleteButtonHidden" class="bi bi-trash cell__delete-button cell__delete-button_red"
+    (click)="onDeleteButtonClick(modalData)"></button>
+</div>
+
+<ng-template #modalData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Удаление сообщения</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Close')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>
+      <strong>Вы уверены что хотите удалить сообщение от <span
+          class="text-primary">{{this.data?.username}}</span></strong>
+    </p>
+    <p>
+      <span class="text-danger">Это необратимая операция.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('Cancel')">Отмена</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('OK')">ОК</button>
+  </div>
+</ng-template>
